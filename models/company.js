@@ -4,8 +4,7 @@ const companySchema = new Schema({
   adminName: { type: String, required: true },
   email: { type: String, required: true, unique: true },
   phone: { type: String, required: true },
-  companyId: { type: mongoose.Schema.Types.ObjectId, required: true },
-  employees: [{ type: String, name: String }]
+  employees: [{ type: Schema.Types.ObjectId, ref: "User" }]
 });
 
 module.exports = mongoose.model("Company", companySchema);
