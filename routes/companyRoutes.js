@@ -1,4 +1,5 @@
 const express = require("express");
+const mongoose = require("mongoose");
 const router = express.Router();
 const Company = require("../models/Company");
 
@@ -20,6 +21,7 @@ router.post("/", (req, res) => {
     adminName: adminName,
     email: email,
     phone: phone,
+    companyId: new mongoose.Types.ObjectId(),
     employees: employees
   });
   newCompany

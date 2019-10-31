@@ -5,7 +5,7 @@ const userSchema = new Schema({
   email: { type: String, required: true, unique: true },
   companyName: { type: String, required: true },
   userRole: { type: String, required: true, default: "Employee" },
-  companyId: { type: Schema.Types.ObjectId, ref: 'Company' }
+  companyId: { type: Schema.Types.ObjectId, ref: "Company" }
 });
 
 module.exports = mongoose.model("User", userSchema);
