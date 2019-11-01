@@ -10,7 +10,9 @@ router.get("/", (req, res) => {
     .then(companies => {
       res.status(200).json(companies);
     })
-    .catch(err => console.log(err));
+    .catch(err => {
+      res.status(500).json({ message: err });
+    });
 });
 
 // POST ADD A NEW COMPANY TO DB
