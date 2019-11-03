@@ -5,8 +5,8 @@ const createUser = (req, res) => {
     const user = new User(req.body);
     
     user.save()
-    .then(users => {
-      res.status(200).json(users);
+    .then(user => {
+      res.status(200).json({ message: 'user saved!'});
     })
     .catch(err => {
       res.status(500).json({ message: err });
