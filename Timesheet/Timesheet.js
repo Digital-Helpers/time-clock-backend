@@ -9,7 +9,8 @@ const timesheetSchema = new Schema({
   },
   date: { type: Date, required: true },
   clockIn: [{ type: Date }],
-  break: [{ type: Date }],
+  breakIn: [{ type: Date }],
+  breakOut: [{ type: Date }],
   clockOut: [{ type: Date }]
 });
 
