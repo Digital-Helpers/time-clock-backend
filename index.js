@@ -3,10 +3,12 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 
 const port = process.env.PORT || 5001;
+const dbase = 'mongodb://localhost:27017/time-clock' || process.env.MONGO_DB_CONNECTION;
 
-mongoose.connect(process.env.MONGO_DB_CONNECTION, {
+mongoose.connect(dbase, {
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
+  useCreateIndex: true,
 });
 
 const db = mongoose.connection;
@@ -16,5 +18,5 @@ db.once("open", function() {
 });
 
 server.listen(port, () => {
-  console.log("<<<SERVER ON 5K>>>");
+  console.log("<<<SERVER ON 5K1>>>");
 });
