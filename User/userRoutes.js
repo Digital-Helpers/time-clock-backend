@@ -1,6 +1,6 @@
 const express = require("express");
-const mongoose = require("mongoose");
 const User = require("./User");
+const { createUser } = require('./userController');
 const router = express.Router();
 
 router.get("/", (req, res) => {
@@ -12,5 +12,7 @@ router.get("/", (req, res) => {
       res.status(500).json({ message: err });
     });
 });
+
+router.post('/', createUser);
 
 module.exports = router;
