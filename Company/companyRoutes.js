@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const router = express.Router();
-const Company = require("../models/Company");
+const Company = require("./Company");
 
 // GET ALL COMPANIES
 
