@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const userSchema = new Schema({
-  name: { type: Boolean, required: true },
+  name: { type: String, required: true },
   email: { type: String, required: true, unique: true },
   companyName: { type: String, required: true },
   userRole: { type: String, required: true, default: "Employee" },
