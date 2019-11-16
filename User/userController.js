@@ -2,22 +2,22 @@ const User = require("./User");
 
 const findAllUsers = (req, res) => {
   User.find()
-    .then(users => {
-      res.status(200).json(users);
-    })
-    .catch(err => {
-      res.status(500).json({ message: err });
-    });
+  .then(users => {
+    res.status(200).json(users);
+  })
+  .catch(err => {
+    res.status(500).json({ message: err });
+  });
 }
 
 const findUser = (req, res) => {
   User.find({ _id: req.params.user_id })
-    .then(user => {
-      res.status(200).json(user);
-    })
-    .catch(err => {
-      res.status(500).json({ message: err });
-    });
+  .then(user => {
+    res.status(200).json(user);
+  })
+  .catch(err => {
+    res.status(500).json({ message: err });
+  });
 }
 
 const createUser = (req, res) => {
