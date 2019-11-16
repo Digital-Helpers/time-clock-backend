@@ -1,39 +1,21 @@
-const express = require("express");
-const mongoose = require("mongoose");
 const router = express.Router();
-const Company = require("./Company");
+const { findAllCompanies, findCompany, createCompany, modifyCompany, deleteCompany } = require("./companyController");
 
 // GET ALL COMPANIES
+router.get('/', findAllCompanies);
 
-router.get("/", (req, res) => {
-  Company.find()
-    .then(companies => {
-      res.status(200).json(companies);
-    })
-    .catch(err => {
-      res.status(500).json({ message: err });
-    });
-});
+// FINDS A COMPANY BY COMPANY_ID
+router.get('/:company_id', findCompany);
 
-// POST ADD A NEW COMPANY TO DB
+// CREATE A COMPANY
+router.post('/', createCompany);
 
-router.post("/", (req, res) => {
-  const { adminName, email, phone, employees } = req.body;
-  newCompany = new Company({
-    adminName: adminName,
-    email: email,
-    phone: phone,
-    companyId: new mongoose.Types.ObjectId(),
-    employees: employees
-  });
-  newCompany
-    .save()
-    .then(company => {
-      res.status(201).json(company);
-    })
-    .catch(err => {
-      res.status(500).json(err);
-    });
-});
+// MODIFIES EXISTING COMPANY FOUND BY ID
+router.put('/:company_id', modifyCompany);
+
+// DELETES A COMPANY FOUND BY ID
+router.delete('/:company_id', deleteCompany);
+
+
 
 module.exports = router;
