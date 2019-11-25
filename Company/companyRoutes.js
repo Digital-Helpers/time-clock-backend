@@ -1,4 +1,4 @@
-const router = express.Router();
+const router = require('express').Router();
 const { findAllCompanies, findCompany, createCompany, modifyCompany, deleteCompany } = require("./companyController");
 
 // GET ALL COMPANIES
