@@ -5,7 +5,7 @@ const userSchema = new Schema({
   name: { type: String, required: true },
   password: {type: String, required: true},
   email: { type: String, required: true, unique: true },
-  companyName: { type: String, required: true },
+  companyName: { type: String },
   userRole: { type: String, required: true, default: "Employee" },
   companyId: { type: Schema.Types.ObjectId, ref: "Company" }
 });
