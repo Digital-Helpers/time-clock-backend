@@ -1,6 +1,5 @@
-const express = require("express");
 const { findAllUsers, findUser, createUser, modifyUser, deleteUser } = require('./userController');
-const router = express.Router();
+const router = require('express').Router();
 
 // Finds all users 
 router.get("/", findAllUsers);

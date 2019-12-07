@@ -1,4 +1,6 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+
 
 const companySchema = new mongoose.Schema({
   owner: { type: Schema.Types.ObjectId, ref: "User" },
